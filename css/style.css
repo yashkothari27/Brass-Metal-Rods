@@ -445,6 +445,20 @@ a:focus {
   display: flex;
 }
 
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-para {
+  height: 2rem;
+  padding: 5px 0;
+  text-align: center;
+  color: #fafafa;
+  background-color: #031652;
+  width: 100%;
+}
+
 .service_section .service_container .box {
   -ms-flex-preferred-size: 32%;
       flex-basis: 32%;
