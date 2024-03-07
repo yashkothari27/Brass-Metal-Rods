@@ -60,6 +60,10 @@ body {
   background-color: #1d2943;
 }
 
+.hero-para {
+  color: #f9f9f8
+}
+
 .hero_area .top_nav {
   background-color: #031652;
   padding: 10px 0;
@@ -443,6 +447,20 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-para {
+  height: 2rem;
+  padding: 5px 0;
+  text-align: center;
+  color: #fafafa;
+  background-color: #031652;
+  width: 100%;
 }
 
 .service_section .service_container .box {
