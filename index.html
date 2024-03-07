@@ -475,26 +475,22 @@
       <div class="">
         <div class="row">
           <div class="col-md-6 ">
-            <form action="">
+            <form method="post">
               <div class="contact_form-container">
                 <div>
                   <div>
-                    <input type="text" placeholder="Full Name" />
+                    <input type="text" name="Name" placeholder="Full Name" />
                   </div>
                   <div>
-                    <input type="email" placeholder="Email " />
+                    <input type="email" name="Email" placeholder="Email " />
                   </div>
                   <div>
-                    <input type="text" placeholder="Phone Number" />
+                    <input type="text" name="Number" placeholder="Phone Number" />
                   </div>
                   <div class="">
-                    <input type="text" placeholder="Message" class="message_input" />
+                    <input type="text" name="Message" placeholder="Message" class="message_input" />
                   </div>
-                  <div class=" ">
-                    <button type="submit">
-                      Send
-                    </button>
-                  </div>
+                    <input type="submit" name="submit" value="submit"/>
                 </div>
               </div>
             </form>
@@ -578,6 +574,18 @@
     </p>
   </footer>
   <!-- footer section -->
+
+  <script>
+    const scriptURL = ''
+    const form = document. forms ['google-sheet']
+    
+    form.addEventListener ('submit', e => {
+    e.preventDefault ()
+    fetch (scriptURL, { method: 'POST', body: new FormData (form) })
+    .then (response => alert ("Thanks for Contacting us ..! We Will Contact You Soon ... ") )
+    .catch (error => console.error('Error!', error.message) )
+    })
+  </script>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
