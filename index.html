@@ -475,14 +475,14 @@
       <div class="">
         <div class="row">
           <div class="col-md-6 ">
-            <form method="post">
+            <form method="POST" name="google-sheet">
               <div class="contact_form-container">
                 <div>
                   <div>
                     <input type="text" name="Name" placeholder="Full Name" />
                   </div>
                   <div>
-                    <input type="email" name="Email" placeholder="Email " />
+                    <input type="email" name="Email" placeholder="Email" />
                   </div>
                   <div>
                     <input type="text" name="Number" placeholder="Phone Number" />
@@ -576,8 +576,8 @@
   <!-- footer section -->
 
   <script>
-    const scriptURL = ''
-    const form = document. forms ['google-sheet']
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwWYpMltkefMsDcfVWouS8LNjb6unAP8Red523B9LRHsn_TGbhEsmQZOl0sBEsLB8jGNA/exec'
+    const form = document.forms['google-sheet']
     
     form.addEventListener ('submit', e => {
     e.preventDefault ()
