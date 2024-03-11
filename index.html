@@ -479,18 +479,18 @@
               <div class="contact_form-container">
                 <div>
                   <div>
-                    <input type="text" name="Name" placeholder="Full Name" />
+                    <input type="text" name="Name" required placeholder="Full Name" />
                   </div>
                   <div>
-                    <input type="email" name="Email" placeholder="Email" />
+                    <input type="email" name="Email" required placeholder="Email" />
                   </div>
                   <div>
-                    <input type="text" name="Number" placeholder="Phone Number" />
+                    <input type="text" name="Number" required placeholder="Phone Number" />
                   </div>
                   <div class="">
-                    <input type="text" name="Message" placeholder="Message" class="message_input" />
+                    <input type="text" name="Message" required placeholder="Message" class="message_input" />
                   </div>
-                    <input type="submit" name="submit" value="submit"/>
+                    <input id="submit" type="submit" name="submit" value="submit"/>
                 </div>
               </div>
             </form>
@@ -576,15 +576,26 @@
   <!-- footer section -->
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwWYpMltkefMsDcfVWouS8LNjb6unAP8Red523B9LRHsn_TGbhEsmQZOl0sBEsLB8jGNA/exec'
-    const form = document.forms['google-sheet']
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwWYpMltkefMsDcfVWouS8LNjb6unAP8Red523B9LRHsn_TGbhEsmQZOl0sBEsLB8jGNA/exec';
+  const form = document.forms['google-sheet'];
+  const submitButton = document.getElementById('submit');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
     
-    form.addEventListener ('submit', e => {
-    e.preventDefault ()
-    fetch (scriptURL, { method: 'POST', body: new FormData (form) })
-    .then (response => alert ("Thanks for Contacting us ..! We Will Contact You Soon ... ") )
-    .catch (error => console.error('Error!', error.message) )
-    })
+    submitButton.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        alert("Thanks for Contacting us! We Will Contact You Soon...");
+        form.reset();
+        submitButton.disabled = false;
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        submitButton.disabled = false;
+      });
+  });
   </script>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>

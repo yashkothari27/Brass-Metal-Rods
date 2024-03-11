@@ -853,6 +853,15 @@ a:focus {
   margin-right: 7px;
 }
 
+#submit {
+  color: white;
+  background-color: #031652;
+}
+
+#submit:disabled {
+  background-color: #ccc;
+}
+
 /* footer section*/
 .footer_section {
   font-weight: 500;
